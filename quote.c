@@ -1,7 +1,6 @@
 #include "quote.h"
 
 /**
-<<<<<<< HEAD
  * quote_state - get the state associated with a given character
  * @c: character
  *
@@ -18,7 +17,9 @@ quote_state_t quote_state(char c)
 	if (c == '\\')
 		return (QUOTE_ESCAPE);
 	return (QUOTE_WORD);
-=======
+}
+
+/**
  * _quote_state_none - get state length and next state
  * @str: string
  * @state: state
@@ -34,12 +35,10 @@ size_t _quote_state_none(const char *str, quote_state_t *state)
 	if (state && *str)
 		*state = quote_state(*str);
 	return (len);
->>>>>>> fc31b8e8fa09ba30b2b8e695a07d95a6295cd87b
 }
 
 
 /**
-<<<<<<< HEAD
  * quote_state_f - get the function associated with a given state
  * @s: state
  *
@@ -61,7 +60,9 @@ quote_state_fp quote_state_f(quote_state_t s)
 		return (_quote_state_escape);
 	}
 	return (NULL);
-=======
+}
+
+/**
  * _quote_state_word - get state length and next state
  * @str: string
  * @state: state
@@ -77,12 +78,10 @@ size_t _quote_state_word(const char *str, quote_state_t *state)
 	if (state && *str)
 		*state = quote_state(*str);
 	return (len);
->>>>>>> fc31b8e8fa09ba30b2b8e695a07d95a6295cd87b
 }
 
 
 /**
-<<<<<<< HEAD
  * quote_state_len - get the length of a given state
  * @str: string
  * @state: state
@@ -93,7 +92,8 @@ size_t quote_state_len(const char *str, quote_state_t state)
 {
 	return (quote_state_f(state)(str, NULL));
 }
-=======
+
+/**
  * _quote_state_double - get state length and next state
  * @str: string
  * @state: state
@@ -149,4 +149,3 @@ size_t _quote_state_escape(const char *str, quote_state_t *state)
 	return (0);
 }
 
->>>>>>> fc31b8e8fa09ba30b2b8e695a07d95a6295cd87b
